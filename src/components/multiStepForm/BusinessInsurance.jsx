@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import MultiStepComponent from "./MultiStepComponent";
 import CompanyInfo from "./CompanyInfo";
 import IndustryInfo from "./IndustryInfo";
 import UserInfo from "./UserInfo";
@@ -9,7 +8,6 @@ import ThanksModal from "./thanksModal";
 import AccordionCom from "./AccordionCom";
 
 const BusinessInsurance = () => {
-  // const [darkMode] = useTheme();
   const initialInputValues = {
     name: "",
     phoneNumber: "",
@@ -24,9 +22,6 @@ const BusinessInsurance = () => {
   }
   const [inputValues, setInputValues] = useState(initialInputValues);
   const [errorElement, setErrorElement] = useState({
-    // nameError: 'Please enter full name',
-    // phoneNumberError: 'Please enter the valid mobile number',
-    // emailAddressError: 'Please enter the valid email address'
   });
   const newSteps = [
     {
@@ -107,13 +102,10 @@ const BusinessInsurance = () => {
   const [formCount, setFormCount] = useState(0);
     let ActiveComponent = newSteps[formCount].component;
     const [showTermsModal, setShowTermsModal] = useState(false)
-    const [showThanksModal, setShowThanksModal] = useState(false)
-    // console.log(showTermsModal)
-  
+    const [showThanksModal, setShowThanksModal] = useState(false)  
     const handleNext = () => {
       const isValid = newSteps[formCount].addValidation();
       if (isValid && formCount < newSteps.length - 1 && inputValues.acceptTheTerms === "accept") {
-        // setErrorElement({})
         setFormCount((prev) => prev + 1);
       } else if (formCount === newSteps.length - 1 && inputValues.acceptTheTerms === "accept") {
         console.log(inputValues)
@@ -139,13 +131,6 @@ const BusinessInsurance = () => {
         </h1>
         <div className="justify-center mx-auto items-start gap-10 mt-6 md:flex">
         <StepperComponent formCount = {formCount} setFormCount = {setFormCount} newSteps = {newSteps} />
-        {/* <MultiStepComponent
-          errorElement={errorElement}
-          setErrorElement={setErrorElement}
-          newSteps={newSteps}
-          inputValues={inputValues}
-          setInputValues={setInputValues}
-        /> */}
         <div className=" bg-gray-100 p-8 h-fit rounded-md add-shadow w-full text-black md:w-1/2">
       <p className="bg-sky-200 p-2 mb-2 text-center font-semi-bold">
         Business Insurance is <span className="text-green-600 font-semi-bold">Just 3 Steps Away!</span>
@@ -189,7 +174,6 @@ const BusinessInsurance = () => {
           name={"accept"}
           onChange={(e) => {
             setInputValues((prev) => {
-              // console.log(e.target.checked);
               return {
                 ...prev, acceptTheTerms: e.target.checked? e.target.name: e.target.checked,
               };

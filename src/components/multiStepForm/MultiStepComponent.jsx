@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TermModal from "./termModal";
-// import Steps from "./Steps";
 
 const MultiStepComponent = ({
   newSteps,
@@ -17,7 +16,6 @@ const MultiStepComponent = ({
   const handleNext = () => {
     const isValid = newSteps[formCount].addValidation();
     if (isValid && formCount < newSteps.length - 1 && inputValues.acceptTheTerms === "accept") {
-      // setErrorElement({})
       setFormCount((prev) => prev + 1);
     } else if (formCount === newSteps.length - 1 && inputValues.acceptTheTerms === "accept") {
       console.log(inputValues);
@@ -72,7 +70,6 @@ const MultiStepComponent = ({
           name={"accept"}
           onChange={(e) => {
             setInputValues((prev) => {
-              // console.log(e.target.checked);
               return {
                 ...prev, acceptTheTerms: e.target.checked? e.target.name: e.target.checked,
               };

@@ -18,10 +18,6 @@ const TermModal = ({showTermsModal, setShowTermsModal, setInputValues}) => {
               closeModal()
             }}
           ></i>
-          {/* <i
-            className="fa-solid fa-envelope text-amber-500 text-8xl mb-4"
-            aria-hidden="true"
-          ></i> */}
           <p className="font-bold text-lg text-left mb-4">Terms and Conditions</p>
           <hr className="text-gray-300 mb-2"/>
           <div className="h-96 scroll-auto overflow-auto">

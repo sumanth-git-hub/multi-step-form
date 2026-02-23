@@ -16,11 +16,6 @@ const IndustryInfo = ({ inputValues, setInputValues, errorElement, setErrorEleme
     "Others",
   ];
 
-  // const handleIndustryDetails = (element, info) => {
-  //   setInputValues((prev) => {
-  //     return {...prev, [info]: element}
-  //   })
-  // }
 
   const handleIndustryDetails = (element) => {
     setInputValues((prev) => {
@@ -59,31 +54,6 @@ const IndustryInfo = ({ inputValues, setInputValues, errorElement, setErrorEleme
               </option>
             );
           })}
-          {/* <option disabled="" hidden="" value="">
-            Industry Category
-          </option>
-          <option value="Banking Finance and Insurance">
-            Banking Finance and Insurance
-          </option>
-          <option value="Computer IT Technology and Communication">
-            Computer IT Technology and Communication
-          </option>
-          <option value="Construction and Real Estate">
-            Construction and Real Estate
-          </option>
-          <option value="Manufacturing">Manufacturing</option>
-          <option value="Medical and Pharmaceuticals">
-            Medical and Pharmaceuticals
-          </option>
-          <option value="Services">Services</option>
-          <option value="Retail and E-commerce">Retail and E-commerce</option>
-          <option value="Automobiles and Electronics">
-            Automobiles and Electronics
-          </option>
-          <option value="Home Lifestyle and Fitness">
-            Home Lifestyle and Fitness
-          </option>
-          <option value="Others">Others</option> */}
         </select>
         <span className="text-sm text-red-400 absolute top-11 left-0">{errorElement.industryCategoryError}</span>
       </div>

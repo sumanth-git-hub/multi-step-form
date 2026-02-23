@@ -8,7 +8,6 @@ const UserInfo = ({inputValues, setInputValues, errorElement, setErrorElement}) 
     setInputValues((prev) => {
         return {...prev, [info]: element}
       })
-      // console.log(info)
   }
 
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const AccordionCom = () => {
-    // const [openAccordion, isOpenAccordion] = useState(0)
     const [openAccordion, isOpenAccordion] = useState([])
     
     const actionOnAccordion = (indexAcc) => {
@@ -9,9 +8,6 @@ const AccordionCom = () => {
         isOpenAccordion((prev) => {
             return prev.includes(indexAcc) ? prev.filter((findValue) => indexAcc !== findValue) : [...prev, indexAcc]
         })
-        // isOpenAccordion(indexAcc === openAccordion ? null : indexAcc)
-        // console.log(openAccordion, "accord values")
-        //     console.log(indexAcc, "index value")
 
     }
 
@@ -28,7 +24,6 @@ const AccordionCom = () => {
         }
     ]
 
-    // console.log(accordionData)
   return (
     <div>
         {
@@ -39,7 +34,6 @@ const AccordionCom = () => {
                             actionOnAccordion(index + 1)
                         }}>{item.question}<i className={`fa-solid fa-angle-down ${openAccordion.includes(index + 1)  ? 'fa-angle-up': 'fa-angle-down'}`} aria-hidden="true"></i></h3>
                         {
-                            // openAccordion === index + 1 && <p className="p-2 text-sm">{item.answerForQuery}</p>
                             openAccordion.includes(index + 1) && <p className="p-2 text-sm">{item.answerForQuery}</p>
                         }
                         </div>
